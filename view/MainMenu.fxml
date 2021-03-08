@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<TitledPane animated="false" collapsible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="840.0" text="Innovis Inventory Management" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainMenuController">
+  <content>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="800.0">
+         <children>
+            <AnchorPane prefHeight="65.0" prefWidth="801.0">
+               <children>
+                  <TitledPane collapsible="false" layoutY="38.0" prefHeight="23.0" prefWidth="200.0" text="Parts">
+                     <font>
+                        <Font name="Garamond Bold" size="14.0" />
+                     </font>
+                  </TitledPane>
+                  <TitledPane collapsible="false" layoutX="401.0" layoutY="38.0" prefHeight="23.0" prefWidth="200.0" text="Products">
+                     <font>
+                        <Font name="Garamond Bold" size="14.0" />
+                     </font>
+                  </TitledPane>
+               </children>
+            </AnchorPane>
+            <SplitPane dividerPositions="0.5" layoutX="-1.0" layoutY="63.0" prefHeight="300.0" prefWidth="800.0">
+               <items>
+                  <TableView fx:id="partTableView" prefHeight="300.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="partidCol" prefWidth="100.0" text="Part ID" />
+                        <TableColumn fx:id="partnameCol" prefWidth="100.0" text="Part Name" />
+                        <TableColumn fx:id="partinventorycountCol" prefWidth="100.0" text="Inventory Count" />
+                        <TableColumn fx:id="costperunitCol" prefWidth="100.0" text="Cost Per Unit" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="productTableView" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="productidCol" prefWidth="100.0" text="Product ID" />
+                        <TableColumn fx:id="productnameCol" prefWidth="100.0" text="Product Name" />
+                        <TableColumn fx:id="productinventorycountCol" prefWidth="100.0" text="Inventory Count" />
+                        <TableColumn fx:id="priceperunitCol" prefWidth="100.0" text="Price Per Unit" />
+                    </columns>
+                  </TableView>
+               </items>
+            </SplitPane>
+            <Button layoutX="229.0" layoutY="433.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onActionSearch" prefHeight="30.0" prefWidth="76.0" text="Search">
+               <font>
+                  <Font name="Garamond" size="12.0" />
+               </font>
+            </Button>
+            <TextField fx:id="searchTxt" layoutX="14.0" layoutY="433.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" />
+            <Button layoutX="710.0" layoutY="433.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onActionExit" prefHeight="30.0" prefWidth="76.0" text="Exit">
+               <font>
+                  <Font name="Garamond" size="12.0" />
+               </font>
+            </Button>
+            <HBox alignment="CENTER" layoutX="14.0" layoutY="393.0" prefHeight="44.0" prefWidth="157.0">
+               <children>
+                  <RadioButton fx:id="partRBtn" mnemonicParsing="false" text="Part">
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="inventoryType" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="productRBtn" mnemonicParsing="false" text="Product" toggleGroup="$inventoryType" />
+               </children>
+            </HBox>
+            <Button layoutY="363.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onActionDisplayAddPartMenu" prefHeight="30.0" prefWidth="76.0" text="Add">
+               <font>
+                  <Font name="Garamond" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="93.0" layoutY="363.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onActionDisplayModifyPartMenu" prefHeight="30.0" prefWidth="76.0" text="Modify">
+               <font>
+                  <Font name="Garamond" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="184.0" layoutY="363.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onActionDeletePart" prefHeight="30.0" prefWidth="76.0" text="Delete">
+               <font>
+                  <Font name="Garamond" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="399.0" layoutY="363.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onActionDisplayAddProductMenu" prefHeight="30.0" prefWidth="76.0" text="Add">
+               <font>
+                  <Font name="Garamond" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="492.0" layoutY="363.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onActionDisplayModifyProductMenu" prefHeight="30.0" prefWidth="76.0" text="Modify">
+               <font>
+                  <Font name="Garamond" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="583.0" layoutY="363.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onActionDeleteProduct" prefHeight="30.0" prefWidth="76.0" text="Delete">
+               <font>
+                  <Font name="Garamond" size="12.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+  </content>
+   <font>
+      <Font name="Garamond Bold" size="12.0" />
+   </font>
+</TitledPane>
